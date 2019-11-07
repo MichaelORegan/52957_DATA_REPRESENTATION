@@ -1,0 +1,40 @@
+<html>
+
+	<head>
+
+		<title>lab 02</title>
+
+	</head>
+
+	<body>
+
+		
+
+		<script>
+// <button onclick="displayJSON()">go</button>
+		var jsonString = '{"employees": [{"firstName": "John", "lastName": "Doe"},{ "firstName": "Anna","lastName": "Smith"} ,{"firstName": "Peter","lastName": "Jones"}]}'
+
+        //function displayJSON(){
+		//	var obj = JSON.parse(jsonString)
+			//for (employee of obj.employees){
+			//	console.log(employee.firstName)
+			//	}
+			//	}
+			
+			
+			var obj = JSON.parse(jsonString);
+			var employees = obj.employees;
+			//for (employee of obj.employees){
+			//	console.log(employee.firstName);
+			//	}
+			
+			employees.forEach(employee => {
+				console.log(employee.lastName)
+				
+			});
+			
+		</script>
+
+	</body>
+
+</html>
