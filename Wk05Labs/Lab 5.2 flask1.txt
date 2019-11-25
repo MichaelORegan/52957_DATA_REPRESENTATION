@@ -1,0 +1,93 @@
+C:\Users\micha
+λ curl -i http://localhost:5000/cars
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 349
+Server: Werkzeug/0.14.1 Python/3.7.3
+Date: Tue, 19 Nov 2019 12:26:16 GMT
+
+{
+  "cars": [
+    {
+      "make": "Ford",
+      "model": "Modeo",
+      "price": 18000,
+      "reg": "181 G 1234"
+    },
+    {
+      "make": "Nissan",
+      "model": "Almera",
+      "price": 8000,
+      "reg": "11 MO 1234"
+    },
+    {
+      "make": "Nissan",
+      "model": "Almera",
+      "price": 8000,
+      "reg": "test"
+    }
+  ]
+}
+
+C:\Users\micha
+λ curl -i http://localhost:5000/cars/test
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 104
+Server: Werkzeug/0.14.1 Python/3.7.3
+Date: Tue, 19 Nov 2019 12:26:43 GMT
+
+{
+  "car": {
+    "make": "Nissan",
+    "model": "Almera",
+    "price": 8000,
+    "reg": "test"
+  }
+}
+
+C:\Users\micha
+λ curl -i -H "Content-Type:application/json" -X POST -d "{\"reg\":\"12 D 1234\",\"make\":\"Fiat\",\"model\":\"Punto\",\"price\":3000}" http://localhost:5000/cars
+HTTP/1.0 201 CREATED
+Content-Type: application/json
+Content-Length: 106
+Server: Werkzeug/0.14.1 Python/3.7.3
+Date: Tue, 19 Nov 2019 12:33:58 GMT
+
+{
+  "car": {
+    "make": "Fiat",
+    "model": "Punto",
+    "price": 3000,
+    "reg": "12 D 1234"
+  }
+}
+
+C:\Users\micha
+λ curl -i -H "Content-Type:application/json" -X PUT -d "{\"make\":\"Fiesta\"}" http://localhost:5000/cars/181%20G%201234
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 110
+Server: Werkzeug/0.14.1 Python/3.7.3
+Date: Tue, 19 Nov 2019 12:35:37 GMT
+
+{
+  "car": {
+    "make": "Fiesta",
+    "model": "Modeo",
+    "price": 18000,
+    "reg": "181 G 1234"
+  }
+}
+
+C:\Users\micha
+λ curl -i -X DELETE http://localhost:5000/cars/181%20G%201234
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 21
+Server: Werkzeug/0.14.1 Python/3.7.3
+Date: Tue, 19 Nov 2019 12:36:18 GMT
+
+{
+  "result": true
+}

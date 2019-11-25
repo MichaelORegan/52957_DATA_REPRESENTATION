@@ -1,0 +1,20 @@
+link to j query
+
+delete the rows from table, blank table
+
+
+on page load call show Viewall
+	call AJAX that gets all the cars
+		fro each car cakk the function that will in sert it into the table
+
+
+on create 
+call AJAX that will create a car on the server
+
+on Update
+call AJAX that ewill update car on the server
+
+on delete
+get the id attribute from the row  ie the reg 
+call AJAX that will delete the car from server
+			

@@ -1,0 +1,160 @@
+C:\Users\micha
+λ curl google.com
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
+
+C:\Users\micha
+λ curl -i google.com
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.com/
+Content-Type: text/html; charset=UTF-8
+Date: Tue, 19 Nov 2019 11:22:18 GMT
+Expires: Thu, 19 Dec 2019 11:22:18 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 219
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
+
+C:\Users\micha
+λ curl http://dummy.restapiexample.com/api/v1/employees
+
+C:\Users\micha
+λ curl http://dummy.restapiexample.com/api/v1/employee/2202
+
+
+### Both of the above commands printed lots of data, coppied employees to another txt file but not 2202
+
+C:\Users\micha
+λ curl http://dummy.restapiexample.com/api/v1/employee/1
+{"id":"1","employee_name":"Ariel1231","employee_salary":"2000","employee_age":"22","profile_image":""}
+
+C:\Users\micha
+λ curl -X DELETE http://dummy.restapiexample.com/api/v1/delete/1000
+{"success":{"text":"successfully! deleted Records"}}
+
+C:\Users\micha
+λ curl -i -d "{\"employee_name\":\"Myname\",\"salary\":\"98765\",\"age\":\"41\",\"id\”:\"8888\"}' -H 'ContentType: application/json" -X POST http://dummy.restapiexample.com/api/v1/create
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Type, X-Requested-With, X-authentication, X-client
+Age: 0
+Cache-Control: no-store, no-cache, must-revalidate
+Content-Type: text/html; charset=UTF-8
+Date: Tue, 19 Nov 2019 12:04:31 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pagespeed: off
+Pragma: no-cache
+Referrer-Policy:
+Response: 200
+Server: nginx/1.16.0
+Set-Cookie: PHPSESSID=1c3ee3c94dd1bb9fa434f26a593781eb; path=/
+Set-Cookie: ezoadgid_133674=-1; Path=/; Domain=restapiexample.com; Expires=Tue, 19 Nov 2019 12:34:30 UTC
+Set-Cookie: ezoref_133674=; Path=/; Domain=restapiexample.com; Expires=Tue, 19 Nov 2019 14:04:30 UTC
+Set-Cookie: ezoab_133674=mod1; Path=/; Domain=restapiexample.com; Expires=Tue, 19 Nov 2019 14:04:30 UTC
+Set-Cookie: active_template::133674=pub_site.1574165070; Path=/; Domain=restapiexample.com; Expires=Thu, 21 Nov 2019 12:04:30 UTC
+Set-Cookie: ezCMPCCS=false; Path=/; Domain=restapiexample.com; Expires=Thu, 19 Nov 2020 12:04:31 GMT
+Vary: Accept-Encoding,X-APP-JSON
+Via: 1.1 varnish (Varnish/6.0)
+X-Ezoic-Cdn: Miss
+X-Middleton-Response: 200
+X-Shard: 100225208
+X-Sol: pub_site
+X-Varnish: 361386968
+X-Vcache: Miss
+Content-Length: 110
+
+{"error":{"text":SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'employee_name' cannot be null}}
+
+C:\Users\micha
+λ curl -i -d "{\"employee_name\":\"Myname\",\"salary\":\"98765\",\"age\":\"41\",\"id\”:\"8888\"}' -H "ContentType: application/json" -X POST http://dummy.restapiexample.com/api/v1/create
+curl: (6) Could not resolve host: application
+
+C:\Users\micha
+λ curl -d “{\"name\":\"Mary\",\"salary\":\"12000\",\"age\":99}” -H “Content-Type: application/json” -X PUT http://dummy.restapiexam ple.com/api/v1/update/2202
+curl: (6) Could not resolve host: application
+curl: (6) Could not resolve host: dummy.restapiexam
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wrong request.</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            color: #B0BEC5;
+            display: table;
+            font-weight: 100;
+            font-family: 'Lato', sans-serif;
+            font-size: 36px;
+        }
+
+        .container {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .content {
+            text-align: center;
+            display: inline-block;
+        }
+
+        .title {
+            font-size: 72px;
+            margin-bottom: 40px;
+        }
+
+        a {
+            color: #B0BEC5;
+            font-weight: 100;
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="title">Wrong request.</div>
+                <p><a href="https://redcenter.nl">home</a></p>
+    </div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3291718-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-3291718-4');
+    </script>
+
+
+</body>
+</html><!-- version 11aaeb1 -->
+
+
+
+
